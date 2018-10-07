@@ -1,0 +1,20 @@
+
+<% if user_signed_in? %>
+<h1>@<%= current_user.username %>'s Feed</h1>
+<p>Here is what your "friends" are saying:</p>
+
+
+<div>
+    <% @following_tweets.each do |tweet| %>
+        <div class="container tweet">
+	    	<p><%= tweet.user.name %> | @<%=  link_to tweet.user.username, show_user_path(id: tweet.user.id) %></p>
+	    	<p><%= tweet.message.html_safe %></p>
+		</div>
+		<br>
+    <% end %>
+</div>
+<% else %>
+	<p>Please Log In or Sign Up to view tweets.</p>
+	<a href="users/sign_in"><button>Log In</button></a>
+	<a href="users/sign_up"><button>Sign Up</button></a>
+<% end %>
