@@ -11,16 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message %>
-  </div>
+  <div class="well tweet">
+    <div class="field">
+      <%= form.label "Your Tweet" %>
+      <%= form.text_field :message, class: "well tweet" %>
+    </div>
 
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
+    <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

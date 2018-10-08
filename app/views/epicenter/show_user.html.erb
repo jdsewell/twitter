@@ -15,8 +15,10 @@
 </p>
 
 <% @user.tweets.each do |tweet| %>
-    <div>
+    <div class=" container tweet">
         <p>@<%= @user.username %></p>
     <p><%= tweet.message %></p>
     </div>
+    <br>
 <% end %>
+<a href="feed" class="btn btn-primary btn-feed"><span class="btn-color">Back to Your Feed</span></a>
