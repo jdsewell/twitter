@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+<div class="container-fluid">
+<div class="col-xs-2"></div>
 
+<div class="col-xs-8">
 <h1>General Feed</h1>
 
   <% @tweets.each do |tweet| %>
-    <div class="tweet">
+    <div class="tweet_general">
     <%= tweet.user.name %> | 
     <%= link_to "@#{tweet.user.username}", show_user_path(id: tweet.user.id) %>
     <%= tweet.message.html_safe %>
@@ -16,5 +20,9 @@
   <% end %>
 
 <br>
-
+</div>
+<div class="col-xs-2"></div>
+</div>
+</div>
 <%= link_to 'New Tweet', new_tweet_path %>
+

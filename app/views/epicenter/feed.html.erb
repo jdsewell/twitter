@@ -2,14 +2,16 @@
 <% if user_signed_in? %>
 <div class="container-fluid">
 <div class="row">
-<div class="col-xs-4" id="user_info">
+<div class="col-xs-3" id="user_info">
 	<div class="user_info">
 		<p><%= current_user.name %></p>
-		<p><%= link_to "@#{current_user.username}", show_user_path(id: current_user.id) %></p>
+		<p><span class="username"><%= link_to "@#{current_user.username}", show_user_path(id: current_user.id) %></span></p>
+		<p><%= current_user.email %></p>
+		<p><%= current_user.bio %></p>
 	</div>
 </div>
-<div class="col-xs-4"></div>
-<div class="col-xs-8 feed">
+<div class="col-xs-3"></div>
+<div class="col-xs-9 feed">
 	<h1>Your Feed</h1>
 	<p>Here is what your "friends" are saying:</p>
 
@@ -19,6 +21,8 @@
         	<div class="tweet">
 	    		<p><%= tweet.user.name %> | <%=  link_to "@#{tweet.user.username}", show_user_path(id: tweet.user.id) %></p>
 	    		<p><%= tweet.message.html_safe %></p>
+	    		<%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
+	    		<%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
 			</div>
 			<br>
     	<% end %>
