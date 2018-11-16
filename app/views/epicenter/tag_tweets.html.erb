@@ -6,7 +6,8 @@
 		<div class="container tweet">
 		<p><%= "@#{tweet.user.username}" %></p>
 		<p><%= tweet.message.html_safe %></p>
-		<p><%= time_ago_in_words(tweet.created_at) %></p>
+		<%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
+	    <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
 		</div>
 		<br>
 	<% end %>

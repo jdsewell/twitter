@@ -1,20 +1,20 @@
 
   <% @users.each do |user| %>
-      <div class="container-fluid">
+      <div class="container follow-list">
       <div class="pull-left">
         <%= user.name %>
-        <%= link_to "@#{user.username}", show_user_path(id: user.id) %>
+        <%= link_to "@#{user.username}", show_user_path(id: user.id), class: "username" %>
       </div>
       <div class="pull-right">
       <% if current_user.following.include?(user.id) %>
-        <%= link_to "Following", unfollow_path(id: user.id), class: "btn btn-primary unfollow_btn" %>
+        <%= link_to "Following", unfollow_path(id: user.id), class: "btn btn-follow unfollow_btn" %>
       <% else %>
         <% if current_user.id != user.id %>
-          <%= link_to "Follow", now_following_path(id: user.id), class: "btn btn-primary" %>
+          <%= link_to "Follow", now_following_path(id: user.id), class: "btn btn-follow" %>
         <% end %>
       <% end %>
       </div>
       </div>
-        
+      <br>
       
   <% end %>

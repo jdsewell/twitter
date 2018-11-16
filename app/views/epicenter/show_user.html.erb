@@ -33,7 +33,9 @@
     <% @user.tweets.each_with_index do |tweet| %>
         <div class="tweet">
             <p>@<%= @user.username %></p>
-        <p><%= tweet.message.html_safe %></p>
+            <p><%= tweet.message.html_safe %></p>
+            <%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
+            <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
         </div>
         <br>
     <% end %>

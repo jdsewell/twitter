@@ -106,3 +106,27 @@ body {
 	border-radius: 5px;
 	border-color: rgb(100,0,100);
 }
+.user_info {
+	border-radius: 5px;
+	border-color: rgb(50,0,0);
+	border-width: 2px;
+	border-style: solid;
+	width: 100%;
+	background-color: rgb(200,0,255);
+	padding: 1%;
+	color: white;
+	margin-bottom: 3%;
+}
+#user_info {
+	position: fixed;
+}
+.follow-list {
+	border-radius: 5px;
+	border-color: rgb(50,0,0);
+	border-width: 2px;
+	border-style: solid;
+	width: 50%;
+	background-color: rgb(200,0,255);
+	padding: 1%;
+	color: white;
+}
