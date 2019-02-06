@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application developed as a project for the Tech Talent South code immersion program. It is a social media application designed to have the same basic functionality as Twitter. Users can have their own profiles, create posts, and follow other users. Users can also include hashtags in their posts, and these hashtags are searchable. 
 
-Things you may want to cover:
+Relevant information :
 
-* Ruby version
+* Ruby and Rails must be installed on the system.
 
-* System dependencies
+* Ruby version 2.6.0
 
-* Configuration
+* Rails version 5.2.2
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Navigate to the program directory and run "rails db:migrate". Then you can start the application by running "rails s" and typing "localhost:3000" in the url bar of your web browser.
